@@ -1,1 +1,4 @@
-console.log('Empezamos with my advanced react project')
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(<h1>Hola Julian</h1>, document.getElementById('app'))
