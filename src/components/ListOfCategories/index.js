@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 
 import { List, Item } from './styles' 
-import { categories } from '../../../api/db.json'
 
-export const ListOfCategories = () => {
+export const ListOfCategories = async () => {
+
+  const [categories, setCategories ] = useState([])
+  const url = 'http://localhost:3500/categories'
+
+  useEffect(() => {
+    fetch(url)
+      .then(response => response.json())
+      .then(response => {
+        setCategories(response)
+      })
+  }, [])
+  // [] -> Execute just when component is mounted
+  // ['dependency'] -> Execute just when dependency changes
 
   return (
     <List>
