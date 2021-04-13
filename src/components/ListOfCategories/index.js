@@ -3,19 +3,31 @@ import { Category } from '../Category'
 
 import { List, Item } from './styles' 
 
-export const ListOfCategories = () => {
-
-  const [categories, setCategories ] = useState([])
-  const [showFixed, setShowFixed ] = useState(false)
+const useCategoriesData = () => {
+  
+  const [ categories, setCategories ] = useState([])
+  const [ loading, setLoading ] = useState(false)
   const url = 'http://localhost:3500/categories'
-
+  
   useEffect(() => {
+    setLoading(true)
     window.fetch(url)
       .then(response => response.json())
-      .then(response => setCategories(response))
+      .then(response => {
+        setCategories(response)
+        setLoading(false)
+      })
   }, [])
   // [] -> Execute just when component is mounted
   // ['dependency'] -> Execute just when dependency changes
+
+  return { categories, loading }
+}
+
+export const ListOfCategories = () => {
+
+  const { categories, loading } = useCategoriesData()
+  const [ showFixed, setShowFixed ] = useState(false)
 
   useEffect(() => {
     const onScroll = e => {
@@ -28,7 +40,7 @@ export const ListOfCategories = () => {
   }, [showFixed])
 
   const renderList = (fixed) => 
-    <List className={fixed ? 'fixed' : '' }>
+    <List fixed={fixed}>
       {
         categories.map((category) => 
           <Item key={category.id}>
