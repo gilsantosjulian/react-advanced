@@ -14,3 +14,16 @@ const fadeInKeyFrames = keyframes`
     opacity: 1;
   }
 `
+
+export const turn = ({ time = '1s', type = 'linear infinite', } = {}) => 
+  css`animation: ${time} ${turnKeyFrames} ${type};`
+
+const turnKeyFrames = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`
