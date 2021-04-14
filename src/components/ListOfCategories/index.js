@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
+import { Image } from '../Image'
 
 import { List, Item } from './styles' 
+const loadingUrl = 'http://localhost:3500/static/loading2.png'
 
 const useCategoriesData = () => {
   
@@ -42,11 +44,13 @@ export const ListOfCategories = () => {
   const renderList = (fixed) => 
     <List fixed={fixed}>
       {
-        categories.map((category) => 
-          <Item key={category.id}>
-            <Category {...category}/>
-          </Item>
-        )
+        loading
+          ? <Image key='loading' src={loadingUrl} alt={'loading'} />
+          : categories.map((category) => 
+              <Item key={category.id}>
+                <Category {...category}/>
+              </Item>
+            )
       }
     </List>
 
