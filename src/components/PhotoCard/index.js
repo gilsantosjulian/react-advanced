@@ -1,22 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
 import { Article, ImgWrapper, Img, Button } from './styles'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 
-const DEFAULT_IMAGE = 'https://res.cloudinary.com/midudev/image/upload/w_150/v1555671700/category_cats.jpg'
+const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 
 export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
 
   const element = useRef(null) // propiedad especial de React, que nos permite capturar el elemento del DOM
   const [show, setShow] = useState(false)
-  const [liked, setLiked] = useState(() => {
-    try {
-      const like = window.localStorage.getItem(key)
-      return like
-    } catch (error) {
-      return false
-    }
-  })
   const key = `liked-${id}`
+  const [like, setLike] = useLocalStorage(key, false)
 
   useEffect(() => {
     // console.log(element.current);
@@ -36,16 +30,9 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
     })
   }, [element])
 
-  const Icon = liked ? MdFavorite : MdFavoriteBorder
-  const setLocalStorage = (key) => {
-    console.log('entra');
-    try {
-      window.localStorage.setItem(key, calue)
-      setLiked(value)
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  console.log(like);
+
+  const Icon = like ? MdFavorite : MdFavoriteBorder
 
   return (
     <Article ref={element}>
@@ -58,11 +45,11 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
             </ImgWrapper>
           </a>
 
-          <Button onClick={() => setLocalStorage(key)}>
+          <Button>
             <Icon
-              size='32px'
-            /> 
-            {likes} likes!
+              onClick={() => setLike(!like)} 
+              size='24px' 
+            /> {likes} likes!
           </Button>
         </>
       }
