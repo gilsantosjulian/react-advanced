@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from 'react-apollo'
 import { App } from './App'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:3500/graphql'
+  uri: 'http://localhost:3500/graphql',
+  cache: new InMemoryCache(),
 })
 
 ReactDOM.render(
@@ -13,3 +13,20 @@ ReactDOM.render(
     <App />
   </ApolloProvider>
   , document.getElementById('app'))
+
+/**
+ * Old way to do with apollo-boost and react-apollo
+ * 
+ * import ApolloClient from 'apollo-boost'
+   import { ApolloProvider } from 'react-apollo'
+
+  const client = new ApolloClient({
+    uri: 'http://localhost:3500/graphql'
+  })
+  
+  ReactDOM.render(
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+    , document.getElementById('app'))
+ */
