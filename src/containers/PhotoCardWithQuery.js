@@ -5,7 +5,7 @@ import { Query } from '@apollo/client/react/components'
 
 const query = gql`
   query getSinglePhoto($id: ID!) {
-    photo (id: $id) {
+    photos (id: $id) {
       id
       categoryId
       src
@@ -25,7 +25,7 @@ export const PhotoCardWithQuery = ({ id }) => (
           const { photo = {} } = data
           return <PhotoCard {...photo}/>
         } else {
-          return <h1>No hay data</h1>
+          return <h3>No hay data</h3>
         }
       }
     }
