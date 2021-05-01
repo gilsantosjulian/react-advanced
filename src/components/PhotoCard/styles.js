@@ -21,16 +21,6 @@ export const Img = styled.img`
   width: 100%;
 `
 
-export const Button = styled.button`
-  display: flex;
-  padding-top: 8px;
-  align-items: center;
-  cursor: pointer;
-  & svg {
-    margin-right: 4px;
-  }
-`
-
 export const Article = styled.article`
   height: 340px;
 `
