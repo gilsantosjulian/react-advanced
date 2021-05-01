@@ -5,7 +5,7 @@ import { Query } from '@apollo/client/react/components'
 
 const query = gql`
   query getSinglePhoto($id: ID!) {
-    photos (id: $id) {
+    photo (id: $id) {
       id
       categoryId
       src
