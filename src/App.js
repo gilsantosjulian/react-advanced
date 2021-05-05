@@ -3,6 +3,7 @@ import { Logo } from './components/Logo'
 import { GlobalStyle } from './styles/globalStyles'
 import { PhotoCardWithQuery } from './containers/PhotoCardWithQuery'
 import { Home } from './pages/Home'
+import { Router } from '@reach/router'
 
 export const App = () => {
   const qs = window.location.search
@@ -16,7 +17,11 @@ export const App = () => {
       {
         detailId
         ? <PhotoCardWithQuery id={detailId}/>  
-        : <Home />
+        : 
+          <Router>
+            <Home path='/'/>
+            <Home path='/pet/:id'/>
+          </Router>
       }
     </>
   )
