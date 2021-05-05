@@ -48,7 +48,7 @@ export const ListOfCategories = () => {
           ? <Image key='loading' src={loadingUrl} alt={'loading'} />
           : categories.map((category) => 
               <Item key={category.id}>
-                <Category {...category}/>
+                <Category {...category} path={`/pet/${category.id}`}/>
               </Item>
             )
       }
