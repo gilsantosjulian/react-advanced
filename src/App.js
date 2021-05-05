@@ -1,9 +1,8 @@
 import React from 'react'
-import { ListOfCategories } from './components/ListOfCategories'
-import { ListOfPhotoCards } from './components/ListOfPhotoCards'
 import { Logo } from './components/Logo'
 import { GlobalStyle } from './styles/globalStyles'
 import { PhotoCardWithQuery } from './containers/PhotoCardWithQuery'
+import { Home } from './pages/Home'
 
 export const App = () => {
   const qs = window.location.search
@@ -17,11 +16,7 @@ export const App = () => {
       {
         detailId
         ? <PhotoCardWithQuery id={detailId}/>  
-        :
-          <>
-            <ListOfCategories />
-            <ListOfPhotoCards categoryId={2} />
-          </>
+        : <Home />
       }
     </>
   )
