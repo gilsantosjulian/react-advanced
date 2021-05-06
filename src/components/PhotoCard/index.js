@@ -14,8 +14,7 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
   const { mutation, mutationLoading, mutationError } = useMutationToogleLike()
 
   const handleFavClick = () => {
-    console.log('entra');
-    !lked && mutation({
+    !liked && mutation({
       variables: {
         input: { id }
       }
