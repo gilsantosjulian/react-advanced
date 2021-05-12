@@ -10,9 +10,11 @@ import { Home } from './pages/Home'
 import { NotRegisteredUser } from './pages/NotRegisteredUser'
 import { User } from './pages/User'
 
-import Context from './Context'
+import { useStateValue } from './state';
 
 export const App = () => {
+  const [{ isAuth }] = useStateValue()
+
   return (
     <>
       <GlobalStyle />
@@ -22,22 +24,19 @@ export const App = () => {
         <Home path='/pet/:categoryId'/>
         <Detail path='/detail/:detailId'/>
       </Router>
-      <Context.Consumer>
-        {
-          ({ isAuth }) => 
-            isAuth
-            ?
-              <Router>
-                <Favs path='/favs'/>
-                <User path='/user'/>
-              </Router>
-            :
-              <Router>
-                <NotRegisteredUser path='/favs'/>
-                <NotRegisteredUser path='/user'/>
-              </Router>
-        }
-      </Context.Consumer>
+      {
+        isAuth
+        ?
+          <Router>
+            <Favs path='/favs'/>
+            <User path='/user'/>
+          </Router>
+        :
+          <Router>
+            <NotRegisteredUser path='/favs'/>
+            <NotRegisteredUser path='/user'/>
+          </Router>
+      }
       <NavBar />
     </>
   )
