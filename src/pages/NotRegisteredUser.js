@@ -1,19 +1,18 @@
 import React from 'react';
-import Context from '../Context';
+import { useStateValue } from '../state';
 
 export const NotRegisteredUser = () => {
-  return (
-    <Context.Consumer>
-      {
-        ({ activateAuth }) => {
-          return(
-            <form onSubmit={activateAuth}> 
-              <button>Iniciar sesión</button>
-            </form>
-          )
+  const [{ isAuth }, dispatch] = useStateValue()
+  const dispatchOpts = {
+    type: 'authenticate',
+    isAuth: true,
+  }
 
-        }
-      }
-    </Context.Consumer>
+  const handleOnClick = () => dispatch(dispatchOpts)
+
+  return (
+    <form> 
+      <button onClick={handleOnClick}>Iniciar sesión</button>
+    </form>
   );
 }

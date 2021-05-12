@@ -2,7 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
-import Context from './Context';
+
+import { StateProvider } from './state';
+import { reducer, initialState } from './reducer';
+
 
 const client = new ApolloClient({
   uri: 'http://localhost:3500/graphql',
@@ -10,11 +13,11 @@ const client = new ApolloClient({
 })
 
 ReactDOM.render(
-  <Context.Provider>
+  <StateProvider initialState={initialState} reducer={reducer}>
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
-  </Context.Provider>
+  </StateProvider>
   , document.getElementById('app'))
 
 /**
