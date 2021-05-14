@@ -10,8 +10,10 @@ export const NotRegisteredUser = () => {
   }
 
   const handleOnSubmit = () => dispatch(dispatchOpts)
-
   return (
-    <UserForm onSubmit={handleOnSubmit} />
+    <>
+      <UserForm onSubmit={handleOnSubmit} title='Registrarse' />
+      <UserForm onSubmit={handleOnSubmit} title='Iniciar sesión' />
+    </>
   );
 }
