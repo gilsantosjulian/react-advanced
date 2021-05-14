@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStateValue } from '../state';
+import { UserForm } from '../components/UserForm';
 
 export const NotRegisteredUser = () => {
   const [{ isAuth }, dispatch] = useStateValue()
@@ -8,11 +9,9 @@ export const NotRegisteredUser = () => {
     isAuth: true,
   }
 
-  const handleOnClick = () => dispatch(dispatchOpts)
+  const handleOnSubmit = () => dispatch(dispatchOpts)
 
   return (
-    <form> 
-      <button onClick={handleOnClick}>Iniciar sesión</button>
-    </form>
+    <UserForm onSubmit={handleOnSubmit} />
   );
 }
