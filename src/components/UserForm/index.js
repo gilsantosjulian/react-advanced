@@ -1,7 +1,8 @@
 import React from 'react';
 import { useInputValue } from '../../hooks/useInputValue';
+import { Button, Form, Input, Title } from './styles'
 
-export const UserForm = ({ onSubmit }) => {
+export const UserForm = ({ onSubmit, title }) => {
   const email = useInputValue('')
   const password = useInputValue('')
 
