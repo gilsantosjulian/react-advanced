@@ -11,17 +11,14 @@ export const NotRegisteredUser = () => {
     isAuth: true,
   }
 
-  // const handleOnSubmit = () => dispatch(dispatchOpts)
-
-  const handleOnSubmit = ({ email, password }) => {
-    const input = { email, password }
-    console.log({input});
-    mutation({
-      variables: { input }
-    })
-    .then(res => {
+  const handleOnSubmit = async ({ email, password }) => {
+    try {
+      const input = { email, password }
+      await mutation({ variables: { input } })
       dispatch(dispatchOpts)
-    })
+    } catch (error) {
+      console.error(error)
+    }
   }
   return (
     <>
