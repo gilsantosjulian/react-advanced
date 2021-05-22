@@ -20,10 +20,13 @@ export const NotRegisteredUser = () => {
       console.error(error)
     }
   }
+
+  const errorMsg = mutationError && 'El usuario ya existe o hay algún problema.'
+
   return (
     <>
-      <UserForm onSubmit={handleOnSubmit} title='Registrarse' />
-      <UserForm onSubmit={handleOnSubmit} title='Iniciar sesión' />
+      <UserForm onSubmit={handleOnSubmit} title='Registrarse' error={errorMsg} />
+      <UserForm onSubmit={handleOnSubmit} title='Iniciar sesión' error={errorMsg} />
     </>
   );
 }
