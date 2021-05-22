@@ -2,7 +2,7 @@ import React from 'react';
 import { useInputValue } from '../../hooks/useInputValue';
 import { Button, Form, Input, Title } from './styles'
 
-export const UserForm = ({ onSubmit, title }) => {
+export const UserForm = ({ error, onSubmit, title }) => {
   const email = useInputValue('')
   const password = useInputValue('')
 
@@ -22,6 +22,7 @@ export const UserForm = ({ onSubmit, title }) => {
         <Input placeholder='Password' {...password}></Input>
         <Button type='submit'>{title}</Button>
       </Form>
+      { error && <span>{error}</span> }
     </>
   );
 }
