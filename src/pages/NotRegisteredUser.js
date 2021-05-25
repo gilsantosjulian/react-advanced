@@ -2,7 +2,7 @@ import React from 'react';
 import { useStateValue } from '../state';
 import { UserForm } from '../components/UserForm';
 import RegisterMutation from '../containers/RegisterMutation';
-import { useMutationRegister } from '../hooks/useRegisterMutation';
+import LoginMutation from '../containers/LoginMutation';
 
 export const NotRegisteredUser = () => {
   const [{ isAuth }, dispatch] = useStateValue()
@@ -32,7 +32,26 @@ export const NotRegisteredUser = () => {
           }
         }
       </RegisterMutation>
-      <UserForm title='Iniciar sesión' />
+      <LoginMutation>
+        {
+          (mutation, loading, error) => {
+            console.log(error);
+            const handleOnSubmit = async ({ email, password }) => {
+              try {
+                const input = { email, password }
+                await mutation({ variables: { input } })
+                dispatch(dispatchOpts)
+              } catch (error) {
+                console.error(error)
+              }
+            }
+
+            const errorMsg = error && 'La contraseña no es correcta o el usuario no existe.'
+
+            return <UserForm disabled={loading} onSubmit={handleOnSubmit} title='Iniciar sesión' error={errorMsg} />
+          }
+        }
+      </LoginMutation>
     </>
   );
 }
