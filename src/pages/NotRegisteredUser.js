@@ -19,8 +19,9 @@ export const NotRegisteredUser = () => {
             const handleOnSubmit = async ({ email, password }) => {
               try {
                 const input = { email, password }
-                await mutation({ variables: { input } })
-                dispatch(dispatchOpts)
+                const res = await mutation({ variables: { input } })
+                const { singup } = res.data
+                dispatch({ type: 'register', token: singup })
               } catch (error) {
                 console.error(error)
               }
@@ -39,8 +40,9 @@ export const NotRegisteredUser = () => {
             const handleOnSubmit = async ({ email, password }) => {
               try {
                 const input = { email, password }
-                await mutation({ variables: { input } })
-                dispatch(dispatchOpts)
+                const res = await mutation({ variables: { input } })
+                const { login } = res.data
+                dispatch({ ...dispatchOpts, token: login })
               } catch (error) {
                 console.error(error)
               }
