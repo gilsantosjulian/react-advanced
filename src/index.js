@@ -1,15 +1,52 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { 
+  ApolloClient, 
+  ApolloLink, 
+  ApolloProvider, 
+  InMemoryCache, 
+  from,
+  HttpLink 
+} from '@apollo/client'
+import { onError } from '@apollo/client/link/error'
 
 import { StateProvider } from './state';
 import { reducer, initialState } from './reducer';
 
 
+const authMiddleware = new ApolloLink((operation, forward) => {
+  const token = window.sessionStorage.getItem('token')
+  const authorization = `Bearer ${token}`
+
+  if(token) {
+    operation.setContext({
+      headers: {
+        authorization
+      }
+    })
+  }
+
+  return forward(operation)
+})
+
+const errorMiddleware = onError(({ networkError }) => {
+  if(networkError && networkError.result.code === 'invalid_token') {
+    sessionStorage.removeItem('token')
+    window.location = '/user'
+  }
+
+})
+
 const client = new ApolloClient({
-  uri: 'http://localhost:3500/graphql',
   cache: new InMemoryCache(),
+  link: from([
+    errorMiddleware,
+    authMiddleware,
+    new HttpLink({
+      uri: 'http://localhost:3500/graphql',
+    })
+  ])
 })
 
 ReactDOM.render(
