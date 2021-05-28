@@ -2,7 +2,6 @@ import React from 'react'
 import { Article, ImgWrapper, Img } from './styles'
 import { FavButton } from '../FavButton'
 import { Link } from '@reach/router'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { useMutationToogleLike } from '../../hooks/useMutationToogleLike'
 
