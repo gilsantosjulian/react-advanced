@@ -1,6 +1,9 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'
 import { useGetFavs } from '../hooks/useGetFavs'
+import { Layout } from '../components/Layout'
 import { ListOfFavs } from '../components/ListOfFavs'
+import { META_FAVS_CONTENT, FAVS_TITLE } from '../constants';
 
 export const Favs = () => {
 
@@ -12,9 +15,8 @@ export const Favs = () => {
   const { favs } = data
 
   return (
-    <>
-      <h1>Favs</h1>
+    <Layout title={FAVS_TITLE} subtitle={META_FAVS_CONTENT}>
       <ListOfFavs favs={favs} />
-    </>
+    </Layout>
   );
 }

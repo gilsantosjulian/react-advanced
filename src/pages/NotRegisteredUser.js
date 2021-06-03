@@ -1,8 +1,10 @@
 import React from 'react';
 import { useStateValue } from '../state';
+import { Layout } from '../components/Layout';
 import { UserForm } from '../components/UserForm';
 import RegisterMutation from '../containers/RegisterMutation';
 import LoginMutation from '../containers/LoginMutation';
+import { NOT_REGISTER_USER_TITLE, NOT_REGISTER_USER_CONTENT } from '../constants';
 
 export const NotRegisteredUser = () => {
   const [{ isAuth }, dispatch] = useStateValue()
@@ -12,7 +14,7 @@ export const NotRegisteredUser = () => {
   }
 
   return (
-    <>
+    <Layout title={NOT_REGISTER_USER_TITLE} subtitle={NOT_REGISTER_USER_CONTENT}>
       <RegisterMutation>
         {
           (mutation, loading, error) => {
@@ -54,6 +56,6 @@ export const NotRegisteredUser = () => {
           }
         }
       </LoginMutation>
-    </>
+    </Layout>
   );
 }
