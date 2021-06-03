@@ -10,3 +10,7 @@ Repositorio con el código del Curso Avanzado de React de Platzi
 // -s flag -> single page applicaction
 npx serve dist -s 
 ```
+
+## Suspense
+Suspense es un componente de React que nos va a permitir suspender algo cuando está en modo lazy(); y lazy(), el cual nos va a permitir importar un componente que no será cargado hasta que este sea llamado. De esta forma mejoraremos el tiempo de carga de nuestra aplicación enormemente.
+

@@ -1,23 +1,26 @@
-import React, { Children } from 'react'
+import React, { Children, Suspense } from 'react'
 import { GlobalStyle } from './styles/globalStyles'
 import { Logo } from './components/Logo'
 import { NavBar } from './components/NavBar'
 import { Router, Redirect } from '@reach/router'
 
-import { Detail } from './pages/Detail'
-import { Favs } from './pages/Favs'
-import { Home } from './pages/Home'
-import { NotFound } from './pages/NotFound'
-import { NotRegisteredUser } from './pages/NotRegisteredUser'
-import { User } from './pages/User'
-
 import { useStateValue } from './state';
+
+/**
+ * Here we remove name imports and use suspend and dinamyc imports
+ */
+const Detail = React.lazy(() => import('./pages/Detail'))
+const Home = React.lazy(() => import('./pages/Home'))
+const Favs = React.lazy(() => import('./pages/Favs'))
+const NotFound = React.lazy(() => import('./pages/NotFound'))
+const NotRegisteredUser = React.lazy(() => import('./pages/NotRegisteredUser'))
+const User = React.lazy(() => import('./pages/User'))
 
 export const App = () => {
   const [{ isAuth }] = useStateValue()
 
   return (
-    <>
+    <Suspense fallback={<div />}>
       <GlobalStyle />
       <Logo />
       <Router>
@@ -34,6 +37,6 @@ export const App = () => {
         <User path='/user'/>
       </Router>
       <NavBar />
-    </>
+    </Suspense>
   )
 }

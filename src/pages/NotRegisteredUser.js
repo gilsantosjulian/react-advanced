@@ -6,7 +6,7 @@ import RegisterMutation from '../containers/RegisterMutation';
 import LoginMutation from '../containers/LoginMutation';
 import { NOT_REGISTER_USER_TITLE, NOT_REGISTER_USER_CONTENT } from '../constants';
 
-export const NotRegisteredUser = () => {
+export default () => {
   const [{ isAuth }, dispatch] = useStateValue()
   const dispatchOpts = {
     type: 'authenticate',
