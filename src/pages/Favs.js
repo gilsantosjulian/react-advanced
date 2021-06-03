@@ -5,7 +5,7 @@ import { Layout } from '../components/Layout'
 import { ListOfFavs } from '../components/ListOfFavs'
 import { META_FAVS_CONTENT, FAVS_TITLE } from '../constants';
 
-export const Favs = () => {
+export default () => {
 
   const { loading, error, data } = useGetFavs()
 
