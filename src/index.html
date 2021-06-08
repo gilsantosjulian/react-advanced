@@ -2,9 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="./assets/icon.png">
+    <script defer src="app.bundle.js"></script>
     <title>Petgram</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="app.bundle.js"></script></head>
+  </head>
   <body>
     <div id='app'></div>
+    <noscript>
+      <h3>This app needs JavaScript to anounce</h3>
+    </noscript>
+    <script>
+      if('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+              console.log('SW registered')
+            })
+            .catch(registrationError => {
+              console.log('SW error', registrationError);
+            })
+        })
+      }
+    </script>
   </body>
 </html>
