@@ -14,3 +14,5 @@ npx serve dist -s
 ## Suspense
 Suspense es un componente de React que nos va a permitir suspender algo cuando está en modo lazy(); y lazy(), el cual nos va a permitir importar un componente que no será cargado hasta que este sea llamado. De esta forma mejoraremos el tiempo de carga de nuestra aplicación enormemente.
 
+## Docs
+More information for each feature implemented during the building of this project (tools and workflow) go to docs folder [docs](./docs)
