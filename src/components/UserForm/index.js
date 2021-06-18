@@ -2,6 +2,7 @@ import React from 'react';
 import { useInputValue } from '../../hooks/useInputValue';
 import { Button, Error, Form, Input, Title } from './styles'
 import { SubmitButton } from '../SubmitButton'
+import PropTypes from 'prop-types';
 
 export const UserForm = ({ disabled, error, onSubmit, title }) => {
   const email = useInputValue('')
@@ -26,4 +27,11 @@ export const UserForm = ({ disabled, error, onSubmit, title }) => {
       { error && <Error>{error}</Error> }
     </>
   );
+}
+
+UserForm.propTypes = {
+  disabled: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 }

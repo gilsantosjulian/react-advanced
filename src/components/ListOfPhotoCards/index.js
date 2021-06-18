@@ -1,6 +1,7 @@
 import React from 'react'
 import { PhotoCard } from '../PhotoCard'
 import { useGetPhotos } from '../../hooks/useGetPhotos'
+import PropTypes from 'prop-types';
 
 export const ListOfPhotoCards = ({ categoryId }) => {
 
@@ -18,6 +19,10 @@ export const ListOfPhotoCards = ({ categoryId }) => {
       ))}
     </ul>
   );
+}
+
+ListOfPhotoCards.propTypes = {
+  categoryId: PropTypes.string.isRequired,
 }
 
 /**

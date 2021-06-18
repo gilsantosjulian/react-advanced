@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Svg } from './styles'
 import { Link } from '@reach/router'
+import PropTypes from 'prop-types';
 
 export const Logo = (props) => {
   return (
@@ -62,3 +63,7 @@ export const Logo = (props) => {
     </Link>
   )
 } 
+
+Logo.propTypes = {
+  props: PropTypes.object,
+}
