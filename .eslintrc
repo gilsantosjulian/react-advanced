@@ -57,5 +57,8 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "parserOptions": {
+    "sourceType": "module"
+}
 }
