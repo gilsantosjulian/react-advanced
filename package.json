@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=development",
-    "lint": "eslint . --ext js --ext jsx",
+    "lint": "eslint . --ext js",
     "lint:fix": "eslint ./ --fix",
     "serve:dev": "webpack --mode 'development' && npx serve dist -s",
     "start:dev": "webpack serve ./src/index.js",
