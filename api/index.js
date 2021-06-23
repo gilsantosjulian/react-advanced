@@ -1,7 +1,9 @@
-const express = require('express')
-const cors = require('cors')
 const { ApolloServer } = require('apollo-server-express')
+const cors = require('cors')
+const express = require('express')
+
 const { resolvers, typeDefs } = require('./schema')
+
 const jwt = require('express-jwt')
 
 // this is not secure! this is for dev purposes
