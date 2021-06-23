@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
+
 import { Category } from '../Category'
 import { Image } from '../Image'
-
 import { List, Item } from './styles' 
 const loadingUrl = 'http://localhost:3500/static/loading2.png'
 

@@ -1,10 +1,12 @@
-import React from 'react'
-import { Article, ImgWrapper, Img } from './styles'
-import { FavButton } from '../FavButton'
 import { Link } from '@reach/router'
-import { useNearScreen } from '../../hooks/useNearScreen'
-import { useMutationToogleLike } from '../../hooks/useMutationToogleLike'
 import PropTypes from 'prop-types';
+import React from 'react'
+
+import { useMutationToogleLike } from '../../hooks/useMutationToogleLike'
+import { useNearScreen } from '../../hooks/useNearScreen'
+import { FavButton } from '../FavButton'
+import { Article, ImgWrapper, Img } from './styles'
+
 
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 

@@ -1,7 +1,8 @@
-import * as React from "react"
-import { Svg } from './styles'
 import { Link } from '@reach/router'
 import PropTypes from 'prop-types';
+import * as React from "react"
+
+import { Svg } from './styles'
 
 export const Logo = (props) => {
   return (

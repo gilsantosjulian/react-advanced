@@ -26,6 +26,10 @@
           {
             "pattern": "react",
             "group": "external"
+          },
+          {
+            "pattern": "*/*",
+            "group": "external"
           }
         ],
         "pathGroupsExcludedImportTypes": ["react"],

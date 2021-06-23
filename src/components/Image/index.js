@@ -1,6 +1,7 @@
-import React from 'react'
-import { Img } from './styles'
 import PropTypes from 'prop-types';
+import React from 'react'
+
+import { Img } from './styles'
 
 export const Image = ({ alt, src }) => {
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, Nav } from './styles';
 import { MdHome, MdFavoriteBorder, MdPersonOutline } from 'react-icons/md';
+
+import { Link, Nav } from './styles';
 
 const SIZE = '32px';
 
