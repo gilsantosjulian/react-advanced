@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { Link as LinkRouter } from '@reach/router'
+import styled from 'styled-components'
 
 export const Link = styled(LinkRouter)`
   border-radius: 8px;

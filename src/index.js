@@ -1,6 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { App } from './App'
 import { 
   ApolloClient, 
   ApolloLink, 
@@ -10,9 +7,12 @@ import {
   HttpLink 
 } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import { StateProvider } from './state';
+import { App } from './App'
 import { reducer, initialState } from './reducer';
+import { StateProvider } from './state';
 
 
 const authMiddleware = new ApolloLink((operation, forward) => {

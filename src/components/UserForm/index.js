@@ -1,8 +1,9 @@
-import React from 'react';
-import { useInputValue } from '../../hooks/useInputValue';
-import { Button, Error, Form, Input, Title } from './styles'
-import { SubmitButton } from '../SubmitButton'
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import { useInputValue } from '../../hooks/useInputValue';
+import { SubmitButton } from '../SubmitButton'
+import { Button, Error, Form, Input, Title } from './styles'
 
 export const UserForm = ({ disabled, error, onSubmit, title }) => {
   const email = useInputValue('')

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+
 import { fadeIn } from '../../styles/animation'
 
 export const List = styled.ul`
