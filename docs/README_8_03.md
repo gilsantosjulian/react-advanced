@@ -9,8 +9,8 @@ Esto nos gustaría poder lograrlo también con nuestros componentes de React. ¿
 Vamos a probarlo. Para ello, vamos a ir a `App.js` y allí vamos a comentar el import de `Favs` y vamos a crear una constante llamada con el mismo nombre del componente y le asignamos la ejecución de React.lazy. A React.lazy le tenemos que pasar una función que llame a un import dinámico y este devuelve el Componente que queremos renderizar.
 
 ```js
-// import { Favs } from './pages/Favs'
-const Favs = React.lazy(() => import('./pages/Favs'))
+// import { Favs } from '@pages/Favs'
+const Favs = React.lazy(() => import('@pages/Favs'))
 ```
 
 Para que esto pueda funcionar, vamos a tener que hacer un pequeño cambio en el componente `Favs` y es que devuelva lo que queremos renderizar por defecto.

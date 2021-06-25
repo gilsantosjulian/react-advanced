@@ -9,12 +9,12 @@ import { useStateValue } from './state';
 /**
  * Here we remove name imports and use suspend and dinamyc imports
  */
-const Detail = React.lazy(() => import('./pages/Detail'))
-const Home = React.lazy(() => import('./pages/Home'))
-const Favs = React.lazy(() => import('./pages/Favs'))
-const NotFound = React.lazy(() => import('./pages/NotFound'))
-const NotRegisteredUser = React.lazy(() => import('./pages/NotRegisteredUser'))
-const User = React.lazy(() => import('./pages/User'))
+const Detail = React.lazy(() => import('@pages/Detail'))
+const Home = React.lazy(() => import('@pages/Home'))
+const Favs = React.lazy(() => import('@pages/Favs'))
+const NotFound = React.lazy(() => import('@pages/NotFound'))
+const NotRegisteredUser = React.lazy(() => import('@pages/NotRegisteredUser'))
+const User = React.lazy(() => import('@pages/User'))
 
 export const App = () => {
   const [{ isAuth }] = useStateValue()
