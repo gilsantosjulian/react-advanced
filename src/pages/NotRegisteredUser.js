@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStateValue } from '../state';
-import { Layout } from '../components/Layout';
-import { UserForm } from '../components/UserForm';
+import { Layout } from '@components/Layout';
+import { UserForm } from '@components/UserForm';
 import RegisterMutation from '../containers/RegisterMutation';
 import LoginMutation from '../containers/LoginMutation';
 import { NOT_REGISTER_USER_TITLE, NOT_REGISTER_USER_CONTENT } from '../constants';

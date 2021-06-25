@@ -1,7 +1,7 @@
-import React, { Children, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { GlobalStyle } from './styles/globalStyles'
-import { Logo } from './components/Logo'
-import { NavBar } from './components/NavBar'
+import { Logo } from '@components/Logo'
+import { NavBar } from '@components/NavBar'
 import { Router, Redirect } from '@reach/router'
 
 import { useStateValue } from './state';

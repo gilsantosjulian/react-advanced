@@ -33,7 +33,7 @@ Ahora, creamos un archivo `containers/PhotoCardWithQuery` por ahora con el sigui
 
 ```js
 import React from 'react'
-import { PhotoCard } from '../components/PhotoCard'
+import { PhotoCard } from '@components/PhotoCard'
 
 export const PhotoCardWithQuery = () => (
   <PhotoCard />

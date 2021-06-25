@@ -42,7 +42,7 @@ query getPhotos($categoryId: ID) {
 Y también creamos el archivo `containers/ListOfPhotoCards.js`. En este archivo vamos simplemente a importar el componente visual, importar el HoC y devolver el componente envuelto con esta funcionalidad, para utilizar más adelante.
 
 ```js en containers/ListOfPhotoCards.js
-import { ListOfPhotoCardsComponent } from '../components/ListOfPhotoCards'
+import { ListOfPhotoCardsComponent } from '@components/ListOfPhotoCards'
 import { withPhotos } from '../hocs/withPhotos'
 
 export const ListOfPhotoCards = withPhotos(ListOfPhotoCardsComponent)

@@ -84,7 +84,7 @@ Lo importamos dentro de `App.js` y quedaría de la siguiente forma:
 ```
 import React from 'react'
 import { GlobalStyles } from './GlobalStyles'
-import { ListOfCategories } from './components/ListOfCategories'
+import { ListOfCategories } from '@components/ListOfCategories'
 
 export default function () {
   return (

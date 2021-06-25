@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Layout } from '../components/Layout'
-import { SubmitButton } from '../components/SubmitButton'
+import { Layout } from '@components/Layout'
+import { SubmitButton } from '@components/SubmitButton'
 import { USER_CONTENT, USER_CONTENT_NOT_AUTHENTICATE, USER_TITLE, USER_TITLE_NOT_AUTHENTICATE } from '../constants'
 import { useStateValue } from '../state';
 
