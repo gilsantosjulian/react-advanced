@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react'
 
-import { useGetPhotos } from '../../hooks/useGetPhotos'
+import { useGetPhotos } from '@hooks/useGetPhotos'
 import { PhotoCard } from '../PhotoCard'
 
 export const ListOfPhotoCards = ({ categoryId }) => {

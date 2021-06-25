@@ -74,7 +74,7 @@ export const ToggleLikeMutation = ({ children }) => {
 Ya podemos volver a nuestro componente PhotoCard donde vamos a importar este nuevo componente.
 
 ```js
-import { ToggleLikeMutation } from '../../containers/ToggleLikeMutation'
+import { ToggleLikeMutation } from '@containers/ToggleLikeMutation'
 ```
 
 Ahora, vamos a envolver nuestro componente `FavButton` con el ToggleLikeMutatioion. Dentro debemos pasarle como children una función. Esta función lo que hará es renderizar el componente `FavButton`

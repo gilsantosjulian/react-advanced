@@ -8,8 +8,8 @@ Vamos a mejorar el título y la descripción de nuestra página `Home`.
 
 ```js
 import React, { Fragment } from 'react'
-import { ListOfCategories } from '../../components/ListOfCategories'
-import { ListOfPhotoCards } from '../../containers/ListOfPhotoCards'
+import { ListOfCategories } from '@components/ListOfCategories'
+import { ListOfPhotoCards } from '@containers/ListOfPhotoCards'
 import { Helmet } from 'react-helmet'
 
 export const Home = ({ id }) => {
@@ -31,7 +31,7 @@ Lo mismo podríamos hacer con la página de detalle, para que cambie el título 
 ```js
 import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
-import { PhotoCardWithQuery } from '../../containers/PhotoCardWithQuery'
+import { PhotoCardWithQuery } from '@containers/PhotoCardWithQuery'
 
 export const Detail = ({ id }) => {
   return <Fragment>
@@ -67,7 +67,7 @@ export const Layout = ({ children, subtitle, title }) => (
 Esto lo podríamos usar, por ejemplo, en nuestro formulario de registro e inicio de sesión. Para ello, vamos a envolver el componente con este nuevo componente Layout.
 
 ```js
-import { Layout } from '../../components/Layout'
+import { Layout } from '../.@components/Layout'
 
 <Layout title='Autentificación' subtitle='Inicia sesión o regístrate en Petgram para poder acceder a esta sección'>
   <RegisterMutation>

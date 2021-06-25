@@ -76,5 +76,15 @@ module.exports = {
     historyApiFallback: {
       disableDotRule: true
     }
-  }
+  },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, './src/components/'),
+      '@containers': path.resolve(__dirname, './src/containers/'),
+      '@constants': path.resolve(__dirname, './src/constants/'),
+      '@hooks': path.resolve(__dirname, './src/hooks/'),
+      '@pages': path.resolve(__dirname, './src/pages/'),
+      '@state': path.resolve(__dirname, './src/state/'),
+    },
+  },
 }

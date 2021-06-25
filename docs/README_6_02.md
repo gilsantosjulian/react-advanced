@@ -26,7 +26,7 @@ Para seguir la misma estructura que en las rutas de la App sólo aparecen compon
 
 ```js
 import React from 'react'
-import { PhotoCardWithQuery } from '../../containers/PhotoCardWithQuery'
+import { PhotoCardWithQuery } from '@containers/PhotoCardWithQuery'
 
 export const Detail = ({ id }) => {
   return <PhotoCardWithQuery id={id} />
@@ -40,10 +40,10 @@ import { Router } from '@reach/router'
 
 import { GlobalStyles } from './styles/GlobalStyles'
 
-import { Home } from './pages/Home'
-import { Detail } from './pages/Detail'
+import { Home } from '@pages/Home'
+import { Detail } from '@pages/Detail'
 
-import { Logo } from './components/Logo'
+import { Logo } from '@components/Logo'
 
 export default function () {
   return (

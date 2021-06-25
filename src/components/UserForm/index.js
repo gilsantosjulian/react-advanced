@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { useInputValue } from '../../hooks/useInputValue';
+import { useInputValue } from '@hooks/useInputValue';
 import { SubmitButton } from '../SubmitButton'
 import { Button, Error, Form, Input, Title } from './styles'
 

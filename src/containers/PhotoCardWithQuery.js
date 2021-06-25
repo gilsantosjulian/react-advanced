@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 import { Query } from '@apollo/client/react/components'
 import React from 'react'
 
-import { PhotoCard } from '../components/PhotoCard'
+import { PhotoCard } from '@components/PhotoCard'
 
 const GET_SINGLE_PHOTO = gql`
   query getSinglePhoto($id: ID!) {
