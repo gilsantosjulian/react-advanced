@@ -3,7 +3,7 @@ Vamos a crear la ruta para la Home y vamos a hacer que sea posible ver las difer
 ```js
 import React, { Fragment } from 'react'
 import { ListOfCategories } from '@components/ListOfCategories'
-import { ListOfPhotoCards } from '../../containers/ListOfPhotoCards'
+import { ListOfPhotoCards } from '@containers/ListOfPhotoCards'
 
 export const Home = () => {
   return (

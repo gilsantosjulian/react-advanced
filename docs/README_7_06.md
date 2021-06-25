@@ -63,7 +63,7 @@ Esto lo usamos en la página `Favs`:
 
 ```js
 import React, { Fragment } from 'react'
-import { FavsWithQuery } from '../../containers/FavsWithQuery'
+import { FavsWithQuery } from '@containers/FavsWithQuery'
 
 export const Favs = ({ favs = [] }) => {
   return <Fragment>

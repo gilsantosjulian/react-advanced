@@ -9,7 +9,7 @@ Vamos a mejorar el título y la descripción de nuestra página `Home`.
 ```js
 import React, { Fragment } from 'react'
 import { ListOfCategories } from '@components/ListOfCategories'
-import { ListOfPhotoCards } from '../../containers/ListOfPhotoCards'
+import { ListOfPhotoCards } from '@containers/ListOfPhotoCards'
 import { Helmet } from 'react-helmet'
 
 export const Home = ({ id }) => {
@@ -31,7 +31,7 @@ Lo mismo podríamos hacer con la página de detalle, para que cambie el título 
 ```js
 import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
-import { PhotoCardWithQuery } from '../../containers/PhotoCardWithQuery'
+import { PhotoCardWithQuery } from '@containers/PhotoCardWithQuery'
 
 export const Detail = ({ id }) => {
   return <Fragment>
