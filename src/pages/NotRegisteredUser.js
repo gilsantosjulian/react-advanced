@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStateValue } from '../state';
+import { useStateValue } from '@state';
 import { Layout } from '@components/Layout';
 import { UserForm } from '@components/UserForm';
 import RegisterMutation from '@containers/RegisterMutation';

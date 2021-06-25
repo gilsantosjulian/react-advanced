@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom'
 
 import { App } from './App'
 import { reducer, initialState } from './reducer';
-import { StateProvider } from './state';
+import { StateProvider } from '@state';
 
 
 const authMiddleware = new ApolloLink((operation, forward) => {

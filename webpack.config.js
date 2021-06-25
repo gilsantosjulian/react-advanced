@@ -84,6 +84,7 @@ module.exports = {
       '@constants': path.resolve(__dirname, './src/constants/'),
       '@hooks': path.resolve(__dirname, './src/hooks/'),
       '@pages': path.resolve(__dirname, './src/pages/'),
+      '@state': path.resolve(__dirname, './src/state/'),
     },
   },
 }
