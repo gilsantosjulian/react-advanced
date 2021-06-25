@@ -125,7 +125,7 @@ export function useLocalStorage (key, initialValue) {
 Ahora en el componente `PhotoCard` ya podemos usar este nuevo hook.
 
 ```js
-import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { useLocalStorage } from '@hooks/useLocalStorage'
 
 const [like, setLike] = useLocalStorage(`like-${id}`)
 ```
