@@ -6,7 +6,6 @@ export const useNearScreen = () => {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    // console.log(element.current);
     Promise.resolve(
       typeof window.IntersectionObserver !== 'undefined'
         ? window.IntersectionObserver

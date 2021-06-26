@@ -32,7 +32,7 @@ const ListOfCategoriesComponent = () => {
   const [ showFixed, setShowFixed ] = useState(false)
 
   useEffect(() => {
-    const onScroll = e => {
+    const onScroll = () => {
       const newShowFixed = window.scrollY > 200
       showFixed !== newShowFixed && setShowFixed(newShowFixed)
     }

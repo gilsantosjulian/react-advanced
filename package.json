@@ -29,6 +29,7 @@
     "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.2.2",
     "cypress": "^7.5.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "html-webpack-plugin": "^5.2.0",
     "prop-types": "^15.7.2",
     "standard": "^16.0.3",
