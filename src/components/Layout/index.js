@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
 import { Div, SubTitle, Title } from './styles';

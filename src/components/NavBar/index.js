@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { MdHome, MdFavoriteBorder, MdPersonOutline } from 'react-icons/md';
 
 import { Link, Nav } from './styles';

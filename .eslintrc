@@ -1,9 +1,10 @@
 {
   "parser": "",
-  "plugins": ["eslint-plugin-import"],
+  "plugins": ["eslint-plugin-import", "jsx-a11y"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
     // "prettier"
   ],
   "env": {
@@ -25,7 +26,8 @@
         "pathGroups": [
           {
             "pattern": "react",
-            "group": "external"
+            "group": "external",
+            "position": "before"
           },
           {
             "pattern": "*/*",
