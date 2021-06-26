@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+
+import PropTypes from 'prop-types';
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
 
 import { Button } from './style'

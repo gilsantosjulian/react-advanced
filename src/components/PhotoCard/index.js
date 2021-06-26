@@ -1,9 +1,10 @@
-import { Link } from '@reach/router'
-import PropTypes from 'prop-types';
 import React from 'react'
 
 import { useMutationToogleLike } from '@hooks/useMutationToogleLike'
 import { useNearScreen } from '@hooks/useNearScreen'
+import { Link } from '@reach/router'
+import PropTypes from 'prop-types';
+
 import { FavButton } from '../FavButton'
 import { Article, ImgWrapper, Img } from './styles'
 
