@@ -4,7 +4,7 @@ import { Logo } from '@components/Logo'
 import { NavBar } from '@components/NavBar'
 import { Router, Redirect } from '@reach/router'
 
-import { useStateValue } from '@state';
+import { useStateValue } from '@state'
 
 /**
  * Here we remove name imports and use suspend and dinamyc imports

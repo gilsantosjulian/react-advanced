@@ -4,7 +4,7 @@ import { useInputValue } from '@hooks/useInputValue';
 import PropTypes from 'prop-types';
 
 import { SubmitButton } from '../SubmitButton'
-import { Button, Error, Form, Input, Title } from './styles'
+import { Error, Form, Input, Title } from './styles'
 
 export const UserForm = ({ disabled, error, onSubmit, title }) => {
   const email = useInputValue('')

@@ -13,7 +13,7 @@ const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1
 
 export const PhotoCard = ({ id, liked, likes = 0, src = DEFAULT_IMAGE }) => {
   const [show, element] = useNearScreen()
-  const { mutation, mutationLoading, mutationError } = useMutationToogleLike()
+  const { mutation } = useMutationToogleLike()
 
   const handleFavClick = () => {
     mutation({

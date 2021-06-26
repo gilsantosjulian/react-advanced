@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PropTypes, { array } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { Grid, Image, Link } from './styles';
 
